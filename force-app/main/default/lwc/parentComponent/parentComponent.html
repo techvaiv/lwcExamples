@@ -1,0 +1,16 @@
+<template>
+    <lightning-card title="Contact List" icon-name="standard:contact_list">
+        <lightning-layout class="slds-m-around_medium">
+            <lightning-layout-item>
+                <template if:true={listIsNotEmpty}>
+                    <template for:each={contacts.data} for:item="contact">
+                        <!--Iterating through 5 contacts as child component. 
+                            Passing contact record to the child component so ID is present-->
+                        <c-child-component key={contact.Id} contact={contact}>
+                        </c-child-component>
+                    </template>
+                </template>
+            </lightning-layout-item>
+        </lightning-layout>
+    </lightning-card>
+</template>
